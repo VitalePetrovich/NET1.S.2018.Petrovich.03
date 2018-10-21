@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,10 +54,11 @@ namespace TasksDay03
                 do
                 {
                     double prevResult = currResult;
-                    currResult = (1.0 / nRoot) *
-                                 ((nRoot - 1) * prevResult + inputNumber / Math.Pow(prevResult, nRoot - 1));
+                    currResult = (1.0 / nRoot) 
+                                 * ((nRoot - 1) * prevResult + inputNumber / Math.Pow(prevResult, nRoot - 1));
                     prec = Math.Abs(prevResult - currResult);
-                } while (prec > targetPrecision);
+                }
+                while (prec > targetPrecision);
 
                 return Math.Round(currResult, precision.ToString().Length - 2);
             }
@@ -138,6 +138,7 @@ namespace TasksDay03
             {
                 charArray[i] = charArray[i - 1];
             }
+
             charArray[0] = tempChar;
         }
     }
